@@ -1,16 +1,23 @@
 <?php
-class Jadwal extends Model
+class JadwalAkademik extends Model
 {
     protected $table = 'jadwal_akademik';
-    protected $fillable = [
-        'matakuliah_id','dosen_id','ruang_id','hari','jam','golongan_id'
-    ];
+    protected $primaryKey = 'id_jadwal';
 
-    public function matakuliah(){
-        return $this->belongsTo(Matakuliah::class);
+    protected $fillable = ['hari','kode_mk','id_ruang','id_gol'];
+
+    public function matkul()
+    {
+        return $this->belongsTo(MataKuliah::class,'kode_mk');
     }
 
-    public function dosen(){
-        return $this->belongsTo(Dosen::class);
+    public function ruang()
+    {
+        return $this->belongsTo(Ruang::class,'id_ruang');
+    }
+
+    public function golongan()
+    {
+        return $this->belongsTo(Golongan::class,'id_gol');
     }
 }

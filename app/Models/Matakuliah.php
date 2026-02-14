@@ -1,6 +1,21 @@
 <?php
-class Matakuliah extends Model
+class MataKuliah extends Model
 {
     protected $table = 'matakuliah';
-    protected $fillable = ['kode','nama','sks','semester'];
+    protected $primaryKey = 'kode_mk';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
+    protected $fillable = ['kode_mk','nama_mk','sks','semester'];
+
+    public function jadwal()
+    {
+        return $this->hasMany(JadwalAkademik::class,'kode_mk');
+    }
+
+    public function krs()
+    {
+        return $this->hasMany(Krs::class,'kode_mk');
+    }
 }
+

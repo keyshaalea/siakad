@@ -34,20 +34,22 @@
                                         
                                             @foreach ($data as $item)
                                             <tr>
-                                            <td>{{$item->NIP}}</td>
-                                            <td>{{$item->Nama}}</td>
-                                            <td>{{$item->Alamat}}</td>
-                                            <td>{{$item->NoHp}}</td>
+                                            <td>{{$item->nip}}</td>
+                                            <td>{{$item->nama}}</td>
+                                            <td>{{$item->alamat}}</td>
+                                            <td>{{$item->nohp}}</td>
                                            <td> 
-                                                
-                                            @endforeach
-                                        
-                                         
-                                            <a href="#" class="btn btn-warning btn-sm">
+                                                <tr>
+                                                     <a href="#" class="btn btn-warning btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <a href="#" class="btn btn-danger btn-sm">
                                                 <i class="fas fa-trash"></i>
+                                           </td>
+                                            @endforeach
+                                        
+                                         
+                                           
                                             </a>
                                         </tr>
                                         

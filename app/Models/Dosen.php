@@ -17,4 +17,10 @@ class Dosen extends Model
         'alamat',
         'no_hp',
     ];
+    public function pengampu()
+    {
+        return $this->hasMany(Pengampu::class,'nip');
+    }
 }
+
+

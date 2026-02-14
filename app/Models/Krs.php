@@ -1,10 +1,10 @@
 <?php
-class PresensiAkademik extends Model
+class Krs extends Model
 {
-    protected $table = 'presensi_akademik';
-    protected $primaryKey = 'id_presensi';
+    protected $table = 'krs';
+    public $timestamps = false;
 
-    protected $fillable = ['tanggal','status_kehadiran','nim','kode_mk'];
+    protected $fillable = ['nim','kode_mk'];
 
     public function mahasiswa()
     {

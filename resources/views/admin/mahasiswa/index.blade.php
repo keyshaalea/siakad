@@ -1,9 +1,9 @@
-@extends('layouts/app')
+@extends('layouts.app')
 
 @section('content')
      <h1 class="h3 mb-4 text-gray-800">
         <i class="fas fa-user mr-2"></i>
-        {{ $title }}
+        Data Mahasiswa
      </h1>
 
      <div class="card">
@@ -29,18 +29,22 @@
                                             <th>Id_gol</th>
                                             <th>Aksi</th>
                     
-                                        </tr>
+                                       </tr>
                                     </thead>
                                    
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                             <td>61</td>
-                                              <td>61</td>
-                                           <td>
+                                        
+                                            @foreach ($data as $item)
+                                            <tr>
+                                            <td>{{$item->nim}}</td>
+                                            <td>{{$item->nama}}</td>
+                                            <td>{{$item->alamat}}</td>
+                                            <td>{{$item->nohp}}</td>
+                                            <td>{{$item->semester}}</td>
+                                            <td>{{optional($item->id_gol)->nama}}</td>
+                                           <td> 
+                                                
+                                            
                                             <a href="#" class="btn btn-warning btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
@@ -48,6 +52,7 @@
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                         </tr>
+                                        @endforeach
                                         
                                     </tbody>
                                 </table>
